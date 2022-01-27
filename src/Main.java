@@ -8,6 +8,13 @@ public class Main {
         Thread thread2 = new Thread(printOddNumber);
 
         thread1.start();
+
+        try {
+            thread1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         thread2.start();
     }
 }
